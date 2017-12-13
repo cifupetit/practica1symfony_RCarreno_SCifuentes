@@ -13,6 +13,28 @@ use Doctrine\ORM\Mapping as ORM;
 class Equip
 {
     /**
+     * @ORM\OneToMany(targetEntity="Jugador", mappedBy="equip")
+     */
+    private $jugadors;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Partit", mappedBy="equipLocal")
+     */
+    private $equipLocal;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Partit", mappedBy="equipVisitant")
+     */
+    private $equipVisitant;
+
+    public function __construct()
+    {
+        $this->jugadors = new ArrayCollection();
+        $this->equipLocal = new ArrayCollection();
+        $this->equipVisitant = new ArrayCollection();
+    }
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -34,7 +56,6 @@ class Equip
      * @ORM\Column(name="any_fundacio", type="integer")
      */
     private $anyFundacio;
-
 
     /**
      * Get id

@@ -13,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
 class Jugador
 {
     /**
+     * @ORM\ManyToOne(targetEntity="Equip", inversedBy="jugadors")
+     * @ORM\JoinColumn(name="IDequip", referencedColumnName="id")
+     */
+    private $equip;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")

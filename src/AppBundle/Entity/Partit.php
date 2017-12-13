@@ -13,6 +13,18 @@ use Doctrine\ORM\Mapping as ORM;
 class Partit
 {
     /**
+     * @ORM\ManyToOne(targetEntity="Equip", inversedBy="equipLocal")
+     * @ORM\JoinColumn(name="IDequip_local", referencedColumnName="id")
+     */
+    private $equipLocal;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Equip", inversedBy="equipVisitant")
+     * @ORM\JoinColumn(name="IDequip_visitant", referencedColumnName="id")
+     */
+    private $equipVisitant;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
