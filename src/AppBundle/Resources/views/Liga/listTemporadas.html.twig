@@ -1,0 +1,16 @@
+{% extends "::base.html.twig" %}
+{% block stylesheets %}
+{% endblock %}
+
+{% block title %}Temporadas{% endblock %}
+
+{% block body %}
+<div style="text-align:center;">
+	<h1 style="margin: 100px;">Temporadas disponibles</h1>
+	{% for i in range(0, 15) %}
+		<button style="margin: 15px; width: 70%;" type="button" class="btn btn-info">Temporada {{i}}</button><br>
+	{% else %}
+		<h4>No se han encontrado tareas...</h4>
+	{% endfor %}
+</div>
+{% endblock %}

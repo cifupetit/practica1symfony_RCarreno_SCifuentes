@@ -1,7 +1,14 @@
 {% extends "::base.html.twig" %}
+{% block stylesheets %}
+{% endblock %}
 
-{% block title %}AppBundle:Liga:list{% endblock %}
+{% block title %}Competiciones{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Liga:list page</h1>
+<div style="text-align:center;">
+	<h1 style="margin: 100px;">Competiciones disponibles</h1>
+	<button style="margin: 10px; width: 70%;" type="button" class="btn btn-info">Champions</button><br>
+	<button style="margin: 10px; width: 70%;" type="button" class="btn btn-info">Liga</button><br>
+	<button style="margin: 10px; width: 70%;" type="button" class="btn btn-info">Copa del rey</button>
+</div>
 {% endblock %}

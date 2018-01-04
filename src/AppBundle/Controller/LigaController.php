@@ -17,4 +17,14 @@ class LigaController extends Controller
         ));
     }
 
+    /**
+     * @Route("/listTemporadas")
+     */
+    public function listTemporadasAction()
+    {
+        return $this->render('AppBundle:Liga:listTemporadas.html.twig', array(
+            // ...
+        ));
+    }
+
 }
