@@ -7,18 +7,10 @@
 {% block body %}
 <div style="text-align:center;">
 	<h1 style="margin: 100px;">Competiciones disponibles</h1>
-
-	<table>
 		{% for partit in partits %}
-		<tr>
-			<td><button style="margin: 10px; width: 70%;" type="button" class="btn btn-info"><a href="http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listTemporadas({{partit.competicio}})">{{partit.competicio}}</a></button><br></td>
-		</tr>
+			<button style="margin-bottom: 1%; width: 50%;" type="button" class="btn btn-info"><a style="text-decoration:none;color:white;" href="{{ path('competi' ,{'competicio': partit.competicio}) }}">{{partit.competicio}}</a></button><br>
 		{% else %}
-		<tr>
-			<td>No se han encontrado competiciones...</td>
-		</tr>
+			<button class="btn btn-danger">No se han encontrado competiciones...</button>
 		{% endfor %}
-	</table>
-
 </div>
 {% endblock %}

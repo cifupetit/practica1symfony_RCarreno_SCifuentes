@@ -41,7 +41,7 @@ class PartitController extends Controller
     }
 
     /**
-     * @Route("/listLigas")
+     * @Route("/listLigas",name="liga")
      */
     public function listLigas(Request $request)
     {
@@ -55,7 +55,7 @@ class PartitController extends Controller
     }
 
     /**
-     * @Route("/listTemporadas")
+* @Route("/listTemporadas/{competicio}",name="competi")
      */
     public function listTemporadasAction($competicio)
     {

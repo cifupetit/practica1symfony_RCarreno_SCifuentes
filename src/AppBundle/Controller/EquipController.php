@@ -72,7 +72,7 @@ class EquipController extends Controller
                                     $equip2= $stmt->fetchAll();
                                     
                                     
-                                    $resultado= $equip1[0]["nom_equip"]." ".$partit2["golslocal"]." - ".$partit2["golsvisitant"]." ".$equip2[0]["nom_equip"];
+                                    echo $equip1[0]["nom_equip"]." ".$partit2["golslocal"]." - ".$partit2["golsvisitant"]." ".$equip2[0]["nom_equip"];
                                     echo "</br>";
                                     
                                 }
@@ -85,7 +85,7 @@ class EquipController extends Controller
                         }
         return $this->render('AppBundle:Equip:llistar_tot_equip.html.twig', array(
             // ...
-			'form' => $form->createView(),'resultado' => $resultado
+			'form' => $form->createView(),//'resultado' => $resultado
         ));
     }
 

@@ -118,14 +118,14 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\EquipController::llistarTotEquipAction',  '_route' => 'app_equip_llistartotequip',);
             }
 
-            // app_partit_listligas
+            // liga
             if ('/listLigas' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\PartitController::listLigas',  '_route' => 'app_partit_listligas',);
+                return array (  '_controller' => 'AppBundle\\Controller\\PartitController::listLigas',  '_route' => 'liga',);
             }
 
-            // app_partit_listtemporadas
-            if ('/listTemporadas' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\PartitController::listTemporadasAction',  '_route' => 'app_partit_listtemporadas',);
+            // competi
+            if (0 === strpos($pathinfo, '/listTemporadas') && preg_match('#^/listTemporadas/(?P<competicio>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'competi')), array (  '_controller' => 'AppBundle\\Controller\\PartitController::listTemporadasAction',));
             }
 
         }
