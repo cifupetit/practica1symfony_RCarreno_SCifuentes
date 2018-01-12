@@ -1,0 +1,24 @@
+{% extends "::base.html.twig" %}
+{% block stylesheets %}
+{% endblock %}
+
+{% block title %}Competiciones{% endblock %}
+
+{% block body %}
+<div style="text-align:center;">
+	<h1 style="margin: 100px;">Competiciones disponibles</h1>
+
+	<table>
+		{% for partit in partits %}
+		<tr>
+			<td><button style="margin: 10px; width: 70%;" type="button" class="btn btn-info"><a href="http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listTemporadas({{partit.competicio}})">{{partit.competicio}}</a></button><br></td>
+		</tr>
+		{% else %}
+		<tr>
+			<td>No se han encontrado competiciones...</td>
+		</tr>
+		{% endfor %}
+	</table>
+
+</div>
+{% endblock %}

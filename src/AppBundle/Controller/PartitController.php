@@ -5,6 +5,9 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+use AppBundle\Entity\Partit;
+use Symfony\Component\HttpFoundation\Request;
+
 class PartitController extends Controller
 {
     /**
@@ -35,6 +38,36 @@ class PartitController extends Controller
         return $this->render('AppBundle:Partit:delete_partit.html.twig', array(
             // ...
         ));
+    }
+
+    /**
+     * @Route("/listLigas")
+     */
+    public function listLigas(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery(
+            'SELECT DISTINCT p.competicio
+            FROM AppBundle:Partit p');
+        $partits = $query->getResult();
+
+        return $this->render('AppBundle:Partit:listLigas.html.twig', array('partits'=>$partits));
+    }
+
+    /**
+     * @Route("/listTemporadas")
+     */
+    public function listTemporadasAction($competicio)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery(
+            'SELECT p.temporada
+            FROM AppBundle:Partit p
+            WHERE p.competicio LIKE :competicio'
+        )->setParameter('competicio', $competicio);
+        $partits = $query->getResult();
+
+        return $this->render('AppBundle:Partit:listTemporadas.html.twig', array('partits'=>$partits));
     }
 
 }

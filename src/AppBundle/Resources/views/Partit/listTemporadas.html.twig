@@ -12,5 +12,18 @@
 	{% else %}
 		<h4>No se han encontrado tareas...</h4>
 	{% endfor %}
+
+	<table>
+		{% for partit in partits %}
+		<tr>
+			<td><button style="margin: 15px; width: 70%;" type="button" class="btn btn-info">Temporada {{partit.temporada}}</button><br></td>
+		</tr>
+		{% else %}
+		<tr>
+			<td>No se han encontrado competiciones...</td>
+		</tr>
+		{% endfor %}
+	</table>
+
 </div>
 {% endblock %}
