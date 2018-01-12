@@ -192,3 +192,5 @@ cb179d,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev
 71ffdd,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listLigas,1515795637,,200
 5fc0bd,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listLigas,1515795671,,200
 a524dd,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listLigas,1515795685,,200
+d444e8,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listTemporadas/LLiga,1515795826,,200
+e55a98,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listLigas,1515795829,,200
