@@ -41,9 +41,9 @@ class PartitController extends Controller
     }
 
     /**
-     * @Route("/listLigas",name="liga")
+     * @Route("/listLigas",name="competiciones")
      */
-    public function listLigas(Request $request)
+    public function listLigas()
     {
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery(
@@ -55,19 +55,37 @@ class PartitController extends Controller
     }
 
     /**
-* @Route("/listTemporadas/{competicio}",name="competi")
+     * @Route("/listTemporadas/{competicio}",name="temporadas")
      */
     public function listTemporadasAction($competicio)
     {
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery(
-            'SELECT p.temporada
+            'SELECT DISTINCT p.competicio, p.temporada
             FROM AppBundle:Partit p
             WHERE p.competicio LIKE :competicio'
         )->setParameter('competicio', $competicio);
         $partits = $query->getResult();
 
         return $this->render('AppBundle:Partit:listTemporadas.html.twig', array('partits'=>$partits));
+    }
+
+    /**
+     * @Route("/listPartidos/{competicio}/{temporada}",name="partidos")
+     */
+    public function listPartidosAction($competicio, $temporada)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery(
+            'SELECT p
+            FROM AppBundle:Partit p
+            WHERE p.competicio LIKE :competicio
+            AND p.temporada = :temporada'
+        )->setParameter('competicio', $competicio);
+        $query->setParameter('temporada', $temporada);
+        $partits = $query->getResult();
+
+        return $this->render('AppBundle:Partit:listPartidos.html.twig', array('partits'=>$partits));
     }
 
 }

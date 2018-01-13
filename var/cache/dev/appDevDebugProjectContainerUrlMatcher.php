@@ -112,20 +112,25 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
-        if (0 === strpos($pathinfo, '/l')) {
-            // app_equip_llistartotequip
-            if ('/llistarTotEquip' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\EquipController::llistarTotEquipAction',  '_route' => 'app_equip_llistartotequip',);
-            }
+        // app_equip_llistartotequip
+        if ('/llistarTotEquip' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\EquipController::llistarTotEquipAction',  '_route' => 'app_equip_llistartotequip',);
+        }
 
-            // liga
+        if (0 === strpos($pathinfo, '/list')) {
+            // competiciones
             if ('/listLigas' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\PartitController::listLigas',  '_route' => 'liga',);
+                return array (  '_controller' => 'AppBundle\\Controller\\PartitController::listLigas',  '_route' => 'competiciones',);
             }
 
-            // competi
+            // temporadas
             if (0 === strpos($pathinfo, '/listTemporadas') && preg_match('#^/listTemporadas/(?P<competicio>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'competi')), array (  '_controller' => 'AppBundle\\Controller\\PartitController::listTemporadasAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'temporadas')), array (  '_controller' => 'AppBundle\\Controller\\PartitController::listTemporadasAction',));
+            }
+
+            // partidos
+            if (0 === strpos($pathinfo, '/listPartidos') && preg_match('#^/listPartidos/(?P<competicio>[^/]++)/(?P<temporada>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'partidos')), array (  '_controller' => 'AppBundle\\Controller\\PartitController::listPartidosAction',));
             }
 
         }

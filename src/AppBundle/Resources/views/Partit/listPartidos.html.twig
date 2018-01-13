@@ -1,0 +1,26 @@
+{% extends "::base.html.twig" %}
+{% block stylesheets %}
+{% endblock %}
+
+{% block title %}Partidos{% endblock %}
+
+{% block body %}
+<div style="text-align:center;" class="container">
+	<h1 style="margin: 100px;">Partidos</h1>
+	{% set partitt = partit %}
+
+		{% for partit in partits %}
+			<div>
+				<h4>Equipo local {{partit.iDequipLocal}} - Equipo visitante {{partit.iDequipVisitant}}</h4>
+				<h5>{{partit.golslocal}} - {{partit.golsvisitant}}</h5><br>
+			</div>
+			{% set partitt = partit %}
+		{% else %}
+		
+			<button class="btn btn-danger">No se han encontrado partidos...</button>
+		
+		{% endfor %}
+	
+	<button class="btn btn-info""><a style="text-decoration:none;color:white;" href="{{ path('temporadas' ,partitt.competicio) }}">Temporadas</a></button>
+</div>
+{% endblock %}

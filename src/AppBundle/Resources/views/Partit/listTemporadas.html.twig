@@ -9,7 +9,7 @@
 	<h1 style="margin: 100px;">Temporadas disponibles</h1>
 
 		{% for partit in partits %}
-<button style="margin-bottom: 2%; width: 50%;" type="button" class="btn btn-info">Temporada {{partit.temporada}}</button><br></td>
+			<button style="margin-bottom: 2%; width: 50%;" type="button" class="btn btn-info" href="{{ path('partidos' ,{'competicio': partit.competicio, 'temporada': partit.temporada}) }}">Temporada {{partit.temporada}}</button><br>
 
 		{% else %}
 		
@@ -17,6 +17,6 @@
 		
 		{% endfor %}
 	
-<button class="btn btn-info""><a style="text-decoration:none;color:white;" href="{{ path('liga')}}">Competiciones</a></button>
+<button class="btn btn-info""><a style="text-decoration:none;color:white;" href="{{ path('competiciones')}}">Competiciones</a></button>
 </div>
 {% endblock %}

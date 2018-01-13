@@ -183,6 +183,26 @@ class Partit
     }
 
     /**
+     * Get equipLocal
+     *
+     * @return int
+     */
+    public function getequipLocal()
+    {
+        return $this->equipLocal;
+    }
+
+    /**
+     * Get equipVisitant
+     *
+     * @return int
+     */
+    public function getequipVisitant()
+    {
+        return $this->equipVisitant;
+    }
+
+    /**
      * Set iDequipLocal
      *
      * @param integer $iDequipLocal
