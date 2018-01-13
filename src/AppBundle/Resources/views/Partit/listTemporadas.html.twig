@@ -9,7 +9,7 @@
 	<h1 style="margin: 100px;">Temporadas disponibles</h1>
 
 		{% for partit in partits %}
-			<button style="margin-bottom: 2%; width: 50%;" type="button" class="btn btn-info" href="{{ path('partidos' ,{'competicio': partit.competicio, 'temporada': partit.temporada}) }}">Temporada {{partit.temporada}}</button><br>
+			<button style="margin-bottom: 2%; width: 50%;" type="button" class="btn btn-info" ><a style="text-decoration:none;color:white;" href="{{ path('partidos' ,{'competicio': partit.competicio, 'temporada': partit.temporada}) }}">Temporada {{partit.temporada}}</button></a><br>
 
 		{% else %}
 		
