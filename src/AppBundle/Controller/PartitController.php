@@ -77,15 +77,14 @@ class PartitController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery(
-            'SELECT p
-            FROM AppBundle:Partit p
-            WHERE p.competicio LIKE :competicio
-            AND p.temporada = :temporada'
+            'SELECT p FROM AppBundle:Partit p WHERE p.competicio LIKE :competicio AND p.temporada = :temporada'
         )->setParameter('competicio', $competicio);
         $query->setParameter('temporada', $temporada);
         $partits = $query->getResult();
 
-        return $this->render('AppBundle:Partit:listPartidos.html.twig', array('partits'=>$partits));
+        return $this->render('AppBundle:Partit:listPartidos.html.twig', array(
+		'partits'=>$partits,'comp'=>$competicio,'temp'=>$temporada
+		));
     }
 
 }
