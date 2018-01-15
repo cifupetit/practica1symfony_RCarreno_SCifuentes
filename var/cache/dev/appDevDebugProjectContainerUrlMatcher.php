@@ -119,8 +119,8 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         if (0 === strpos($pathinfo, '/list')) {
             // competiciones
-            if ('/listLigas' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\PartitController::listLigas',  '_route' => 'competiciones',);
+            if ('/listCompeticiones' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\PartitController::listCompeticiones',  '_route' => 'competiciones',);
             }
 
             // temporadas

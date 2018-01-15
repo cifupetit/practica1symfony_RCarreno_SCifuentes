@@ -41,9 +41,9 @@ class PartitController extends Controller
     }
 
     /**
-     * @Route("/listLigas",name="competiciones")
+     * @Route("/listCompeticiones",name="competiciones")
      */
-    public function listLigas()
+    public function listCompeticiones()
     {
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery(
@@ -51,7 +51,7 @@ class PartitController extends Controller
             FROM AppBundle:Partit p');
         $partits = $query->getResult();
 
-        return $this->render('AppBundle:Partit:listLigas.html.twig', array('partits'=>$partits));
+        return $this->render('AppBundle:Partit:listCompeticiones.html.twig', array('partits'=>$partits));
     }
 
     /**
@@ -67,7 +67,7 @@ class PartitController extends Controller
         )->setParameter('competicio', $competicio);
         $partits = $query->getResult();
 
-        return $this->render('AppBundle:Partit:listTemporadas.html.twig', array('partits'=>$partits));
+        return $this->render('AppBundle:Partit:listTemporadas.html.twig', array('partits'=>$partits, 'comp'=>$competicio));
     }
 
     /**
@@ -75,9 +75,17 @@ class PartitController extends Controller
      */
     public function listPartidosAction($competicio, $temporada)
     {
+        /*'SELECT p, (SELECT eqL.nom_equip FROM AppBundle:Equip eqL WHERE eqL.id = p.IDequip_local), (SELECT eqV.nom_equip FROM AppBundle:Equip eqV WHERE eqV.id = p.IDequip_visitant)
+            FROM AppBundle:Partit p, AppBundle:Equip e 
+            WHERE p.competicio LIKE :competicio 
+            AND p.temporada = :temporada
+            GROUP BY p.id'*/
+
         $em = $this->getDoctrine()->getManager();
         $query = $em->createQuery(
-            'SELECT p FROM AppBundle:Partit p WHERE p.competicio LIKE :competicio AND p.temporada = :temporada'
+            'SELECT p FROM AppBundle:Partit p 
+            WHERE p.competicio LIKE :competicio 
+            AND p.temporada = :temporada'
         )->setParameter('competicio', $competicio);
         $query->setParameter('temporada', $temporada);
         $partits = $query->getResult();
