@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+{% block stylesheets %}
+{% endblock %}
+
+{% block title %}Partidos de equipo{% endblock %}
+
+{% block body %}
+<div style="text-align:center;" class="container">
+	<h1 style="margin: 100px;">Buscar partidos jugados de cierto equipo</h1>
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+
+{% endblock %}

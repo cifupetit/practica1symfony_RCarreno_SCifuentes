@@ -1,0 +1,26 @@
+{% extends "::base.html.twig" %}
+{% block stylesheets %}
+{% endblock %}
+
+{% block title %}Partidos de equipo{% endblock %}
+
+{% block body %}
+<div style="text-align:center;" class="container">
+	<h1 style="margin: 100px;">Partidos jugados de {{[0].nomEquip}}</h1>
+
+		{% for partit in partits %}
+			<div>
+				<h4>Equipo local {{partit.iDequipLocal}} contra Equipo visitante {{partit.iDequipVisitant}}</h4>
+				<h5>Temporada {{partit.temporada}} - {{partit.competicio}}</h5><br>
+			</div>
+
+		{% else %}
+		
+			<div class="alert alert-danger" role="alert">No se han encontrado partidos jugados por el equipo {{[0].nomEquip}}</div>
+		
+		{% endfor %}
+
+	<button class="btn btn-info""><a style="text-decoration:none;color:white;" href="{{ path('partidosDeEquipoForm') }}">Buscar partidos de equipo</a></button>
+	<button class="btn btn-info""><a style="text-decoration:none;color:white;" href="{{ path('competiciones') }}">Competiciones</a></button>
+</div>
+{% endblock %}

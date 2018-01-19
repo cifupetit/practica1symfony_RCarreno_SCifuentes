@@ -133,6 +133,19 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'partidos')), array (  '_controller' => 'AppBundle\\Controller\\PartitController::listPartidosAction',));
             }
 
+            if (0 === strpos($pathinfo, '/listPartidosDeEquipo')) {
+                // partidosDeEquipoForm
+                if ('/listPartidosDeEquipoForm' === $pathinfo) {
+                    return array (  '_controller' => 'AppBundle\\Controller\\PartitController::listPartidosDeEquipoFormAction',  '_route' => 'partidosDeEquipoForm',);
+                }
+
+                // partidosDeEquipo
+                if (preg_match('#^/listPartidosDeEquipo/(?P<equip>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'partidosDeEquipo')), array (  '_controller' => 'AppBundle\\Controller\\PartitController::listPartidosDeEquipoAction',));
+                }
+
+            }
+
         }
 
         // app_partit_addpartit
