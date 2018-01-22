@@ -6,17 +6,18 @@
 
 {% block body %}
 <div style="text-align:center;" class="container">
-	<h1 style="margin: 100px;">Partidos jugados de {{[0].nomEquip}}</h1>
+	<h1 style="margin: 100px;">Partidos jugados de {{nomEquip.nomEquip}}</h1>
 
 		{% for partit in partits %}
 			<div>
-				<h4>Equipo local {{partit.iDequipLocal}} contra Equipo visitante {{partit.iDequipVisitant}}</h4>
-				<h5>Temporada {{partit.temporada}} - {{partit.competicio}}</h5><br>
+				<h5>Temporada {{partit.temporada}} - {{partit.competicio}}</h5>
+				<h4>{{partit.equipLocal.nomEquip}} - {{partit.equipVisitant.nomEquip}}</h4>
+				<h5>{{partit.golslocal}} - {{partit.golsvisitant}}</h5><br>
 			</div>
 
 		{% else %}
 		
-			<div class="alert alert-danger" role="alert">No se han encontrado partidos jugados por el equipo {{[0].nomEquip}}</div>
+			<div class="alert alert-danger" role="alert">No se han encontrado partidos jugados por el equipo {{nomEquip.nomEquip}}</div>
 		
 		{% endfor %}
 

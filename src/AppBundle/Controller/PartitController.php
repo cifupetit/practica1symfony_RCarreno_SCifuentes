@@ -127,8 +127,7 @@ class PartitController extends Controller
             )->setParameter('equip', $equip->getNomEquip());
             $idEquip = $query->getResult();
 
-            //return $this->redirectToRoute('partidosDeEquipo', {'idEquip' : nomEquipForm});
-            return $this->redirectToRoute('partidosDeEquipo', array('equip' => $idEquip));
+            return $this->redirectToRoute('partidosDeEquipo', array('equip' => $idEquip[0]['id']));
         }
 
         return $this->render('AppBundle:Partit:listPartidosDeEquipoForm.html.twig', array(
@@ -150,14 +149,13 @@ class PartitController extends Controller
         $partits = $query->getResult();
 
         $queryX = $em->createQuery(
-            'SELECT e.nomEquip FROM AppBundle:Equip e 
+            'SELECT e.nomEquip FROM AppBundle:Equip e
             WHERE e.id = :equip'
         )->setParameter('equip', $equip);
         $nomEquip = $queryX->getResult();
-        var_dump($nomEquip);
 
         return $this->render('AppBundle:Partit:listPartidosDeEquipo.html.twig', array(
-        'partits'=>$partits, 'nomEquip'=>$nomEquip
+        'partits'=>$partits, 'nomEquip'=>$nomEquip[0]
         ));
     }
 
