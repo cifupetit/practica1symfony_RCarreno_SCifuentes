@@ -15,12 +15,44 @@ use AppBundle\Entity\Equip;
 class PartitController extends Controller
 {
     /**
-     * @Route("/addPartit")
+     * @Route("/addPartit",name="addPartit")
      */
-    public function addPartitAction()
+    public function addPartitAction(Request $request)
     {
+		$partit =new Partit();
+		$partit->setCompeticio('Competicio');
+		$partit->setTemporada('Temporada');
+		$partit->setIDequipLocal('dsf');
+		$partit->setGolslocal('gols equip Local');
+		$partit->setIDequipVisitant('sac');
+		$partit->setGolsvisitant('gols equip visitant');
+		
+		
+		
+		$form=$this->createFormBuilder($partit)
+			->add('Competicio', TextType::class)
+            ->add('Temporada', TextType::class)
+			->add('iDequipLocal', TextType::class)
+            ->add('Golslocal', TextType::class)
+			->add('iDequipVisitant', TextType::class)
+            ->add('Golsvisitant', TextType::class)
+			->add('save', SubmitType::class, array('label' => 'Crear Partit'))
+            ->getForm();
+			$form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+
+        $task = $form->getData();
+
+
+         $em = $this->getDoctrine()->getManager();
+         $em->persist($task);
+         $em->flush();
+
+        return $this->redirectToRoute('AppBundle:Partit:listPartidosDeEquipoForm.html.twig');
+    }
         return $this->render('AppBundle:Partit:add_partit.html.twig', array(
-            // ...
+			'form' => $form->createView(),
         ));
     }
 
