@@ -781,3 +781,13 @@ dfcf8f,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev
 d87d36,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listPartidosDeEquipoForm,1517043036,,302
 b9d875,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listPartidosDeEquipo/1,1517043036,,200
 cb9d2b,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listCompeticiones,1517043058,,200
+c9412c,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listTemporadas/Liga,1517045006,,200
+1eb72b,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listCompeticiones,1517045011,,200
+7c6944,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listTemporadas/Liga,1517045014,,200
+d65026,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listPartidos/Liga/1,1517045016,,200
+70d112,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listPartidosDeEquipoForm,1517045018,,200
+5867ac,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listPartidosDeEquipoForm,1517045026,,302
+2eff07,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listPartidosDeEquipo/1,1517045027,,200
+a4f486,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listCompeticiones,1517045034,,200
+bdb27f,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listTemporadas/Liga,1517045035,,200
+4b8646,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listPartidos/Liga/1,1517045039,,200
