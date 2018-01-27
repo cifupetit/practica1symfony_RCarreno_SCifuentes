@@ -5,87 +5,86 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
-
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
+
+use AppBundle\Entity\Equip;
+
 
 class EquipController extends Controller
 {
     /**
-     * @Route("/llistarTotEquip")
+     * @Route("/listPartidosDeEquipoForm",name="partidosDeEquipoForm")
      */
-    public function llistarTotEquipAction(Request $request)
+    public function listPartidosDeEquipoFormAction(Request $request)
     {
-		
-       $repositori = $this->getDoctrine()->getRepository('AppBundle:Partit');
-       $partidos = $repositori->findall();
-       $data = array();
-       $form = $this->createFormBuilder($data)
-                        ->add('Nombre', TextType::class)
-                        ->add('Busqueda equip', SubmitType::class, array('label' => 'Busqueda equip'))
-                        ->getForm();
-                        
-                        if($request->isMethod('POST')){
-                            
-                            $form->handleRequest($request);
-                            $data = $form->getData();
-                            $nequip = $data["Nombre"];
-                            
-                            $em = $this->getDoctrine()->getEntityManager();
-                            $db = $em->getConnection();
-                            
-                            $query = "SELECT id FROM equip WHERE nom_equip = '".$nequip."' ;";
-                            $stmt =  $db->prepare($query);
-                            $params = array();
-                            $stmt->execute($params);
-                            $id2=$stmt->fetchAll();
-                            
-                            if(empty($id2)){
-								echo "No existeix aquest equip";
-								}else{
-									$id1 = $id2[0]["id"];
-								$query = "SELECT * FROM partit WHERE IDequip_local = '".$id1."' OR IDequip_visitant = '".$id1."'";
-                            $stmt = $db->prepare($query);
-                            $params = array();
-                            $stmt->execute($params);
-                            $partit1=$stmt->fetchAll();
-                            
-                            if($partit1 == null){
-                                echo "No existeixen partits per aquest equip";
-                            }else{
-                                foreach($partit1 as $partit2){
-                                    
-                                    $query = "SELECT * FROM equip WHERE id = ".$partit2["IDequip_local"].";";
-                                    $stmt = $db->prepare($query);
-                                    $params = array();
-                                    $stmt->execute($params);
-                                    $equip1= $stmt->fetchAll();
-                                    
-                                    $query = "SELECT * FROM equip WHERE id = ".$partit2["IDequip_visitant"].";";
-                                    $stmt = $db->prepare($query);
-                                    $params = array();
-                                    $stmt->execute($params);
-                                    $equip2= $stmt->fetchAll();
-                                    
-                                    
-                                    echo $equip1[0]["nom_equip"]." ".$partit2["golslocal"]." - ".$partit2["golsvisitant"]." ".$equip2[0]["nom_equip"];
-                                    echo "</br>";
-                                    
-                                }
-                            }
-								}
-							
-							
-                            
-                            
-                        }
-        return $this->render('AppBundle:Equip:llistar_tot_equip.html.twig', array(
-            // ...
-			'form' => $form->createView(),//'resultado' => $resultado
+        $equip = new Equip();
+        $equip->setNomEquip('Escribe el nombre de equipo');
+
+        $form = $this->createFormBuilder($equip)
+            ->add('nomEquip', TextType::class)
+            ->add('busca', SubmitType::class, array('label' => 'Buscar partidos'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $equip = $form->getData();
+
+            $equip = new Equip();
+            $equip->setNomEquip($form->get('nomEquip')->getData());
+
+            $em = $this->getDoctrine()->getManager();
+            $queryEquip = $em->createQuery(
+            'SELECT e.id FROM AppBundle:Equip e 
+            WHERE e.nomEquip = :equip'
+            )->setParameter('equip', $equip->getNomEquip());
+            $idEquip = $queryEquip->getResult();
+
+
+            if (!$idEquip) {
+                $mensajeErr = 'No se ha encontrado ningún equipo con el nombre: '.$form->get('nomEquip')->getData();
+                return $this->render('AppBundle:Equip:listPartidosDeEquipoForm.html.twig', array(
+                'form' => $form->createView(), 'mensajeErr' => $mensajeErr
+                ));
+            }
+
+            return $this->redirectToRoute('partidosDeEquipo', array('equip' => $idEquip[0]['id']));
+        }
+
+        return $this->render('AppBundle:Equip:listPartidosDeEquipoForm.html.twig', array(
+        'form' => $form->createView(),
+        ));
+    }
+
+    /**
+     * @Route("/listPartidosDeEquipo/{equip}",name="partidosDeEquipo")
+     */
+    public function listPartidosDeEquipoAction($equip)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery(
+            'SELECT p FROM AppBundle:Partit p 
+            WHERE p.iDequipLocal = :equip 
+            OR p.iDequipVisitant = :equip'
+        )->setParameter('equip', $equip);
+        $partits = $query->getResult();
+
+        $queryX = $em->createQuery(
+            'SELECT e.nomEquip FROM AppBundle:Equip e
+            WHERE e.id = :equip'
+        )->setParameter('equip', $equip);
+        $nomEquip = $queryX->getResult();
+
+        $queryJ = $em->createQuery(
+            'SELECT j FROM AppBundle:Jugador j
+            WHERE j.equip = :equipID'
+            )->setParameter('equipID', $equip);
+            $jugadors = $queryJ->getResult();
+
+        return $this->render('AppBundle:Equip:listPartidosDeEquipo.html.twig', array(
+        'partits'=>$partits, 'nomEquip'=>$nomEquip[0], 'jugadors' => $jugadors
         ));
     }
 

@@ -112,12 +112,25 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
-        // app_equip_llistartotequip
-        if ('/llistarTotEquip' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\EquipController::llistarTotEquipAction',  '_route' => 'app_equip_llistartotequip',);
-        }
-
         if (0 === strpos($pathinfo, '/list')) {
+            if (0 === strpos($pathinfo, '/listPartidosDeEquipo')) {
+                // partidosDeEquipoForm
+                if ('/listPartidosDeEquipoForm' === $pathinfo) {
+                    return array (  '_controller' => 'AppBundle\\Controller\\EquipController::listPartidosDeEquipoFormAction',  '_route' => 'partidosDeEquipoForm',);
+                }
+
+                // partidosDeEquipo
+                if (preg_match('#^/listPartidosDeEquipo/(?P<equip>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'partidosDeEquipo')), array (  '_controller' => 'AppBundle\\Controller\\EquipController::listPartidosDeEquipoAction',));
+                }
+
+            }
+
+            // partidos
+            if (0 === strpos($pathinfo, '/listPartidos') && preg_match('#^/listPartidos/(?P<competicio>[^/]++)/(?P<temporada>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'partidos')), array (  '_controller' => 'AppBundle\\Controller\\PartitController::listPartidosAction',));
+            }
+
             // competiciones
             if ('/listCompeticiones' === $pathinfo) {
                 return array (  '_controller' => 'AppBundle\\Controller\\PartitController::listCompeticiones',  '_route' => 'competiciones',);
@@ -126,24 +139,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             // temporadas
             if (0 === strpos($pathinfo, '/listTemporadas') && preg_match('#^/listTemporadas/(?P<competicio>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'temporadas')), array (  '_controller' => 'AppBundle\\Controller\\PartitController::listTemporadasAction',));
-            }
-
-            // partidos
-            if (0 === strpos($pathinfo, '/listPartidos') && preg_match('#^/listPartidos/(?P<competicio>[^/]++)/(?P<temporada>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'partidos')), array (  '_controller' => 'AppBundle\\Controller\\PartitController::listPartidosAction',));
-            }
-
-            if (0 === strpos($pathinfo, '/listPartidosDeEquipo')) {
-                // partidosDeEquipoForm
-                if ('/listPartidosDeEquipoForm' === $pathinfo) {
-                    return array (  '_controller' => 'AppBundle\\Controller\\PartitController::listPartidosDeEquipoFormAction',  '_route' => 'partidosDeEquipoForm',);
-                }
-
-                // partidosDeEquipo
-                if (preg_match('#^/listPartidosDeEquipo/(?P<equip>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'partidosDeEquipo')), array (  '_controller' => 'AppBundle\\Controller\\PartitController::listPartidosDeEquipoAction',));
-                }
-
             }
 
         }

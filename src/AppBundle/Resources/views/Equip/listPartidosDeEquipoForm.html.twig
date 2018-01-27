@@ -8,6 +8,10 @@
 <div style="text-align:center;" class="container">
 	<h1 style="margin: 100px;">Buscar partidos jugados de cierto equipo</h1>
 
+{% if mensajeErr is defined %}
+    <p>{{mensajeErr}}</p>
+{% endif %}
+
 {{ form_start(form) }}
 {{ form_widget(form) }}
 {{ form_end(form) }}
