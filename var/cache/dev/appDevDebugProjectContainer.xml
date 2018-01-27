@@ -463,7 +463,11 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
+<<<<<<< HEAD
       <argument type="service" id="service_locator.f753f668ae0659e608dace300cce5a3a"/>
+=======
+      <argument type="service" id="service_locator.e799903756f2eb56b90c213316d1ef0e"/>
+>>>>>>> c0bf06fa9922662091069544d4b1398911d46d37
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -508,7 +512,6 @@
     <service id="cache_warmer" class="Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate">
       <argument type="collection">
         <argument type="service" id="templating.cache_warmer.template_paths"/>
-        <argument type="service" id="kernel.class_cache.cache_warmer"/>
         <argument type="service" id="validator.mapping.cache_warmer"/>
         <argument type="service" id="router.cache_warmer"/>
         <argument type="service" id="annotations.cache_warmer"/>
@@ -518,7 +521,6 @@
       </argument>
     </service>
     <service id="kernel.class_cache.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ClassCacheCacheWarmer">
-      <tag name="kernel.cache_warmer"/>
       <argument type="collection">
         <argument>Symfony\Component\HttpFoundation\ParameterBag</argument>
         <argument>Symfony\Component\HttpFoundation\HeaderBag</argument>
@@ -527,6 +529,7 @@
         <argument>Symfony\Component\HttpFoundation\Request</argument>
         <argument>Symfony\Component\HttpKernel\Kernel</argument>
       </argument>
+      <deprecated>The "%service_id%" option is deprecated since version 3.3, to be removed in 4.0.</deprecated>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="collection">
@@ -627,7 +630,11 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
+<<<<<<< HEAD
       <argument>GpMAcZ9ggR2vG9EPw9XHW9</argument>
+=======
+      <argument>BOXKLgHW4tom1N1P7trB7-</argument>
+>>>>>>> c0bf06fa9922662091069544d4b1398911d46d37
       <argument>D:\xampp\htdocs\practica1symfony_RCarreno_SCifuentes\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -637,7 +644,11 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
+<<<<<<< HEAD
       <argument>GpMAcZ9ggR2vG9EPw9XHW9</argument>
+=======
+      <argument>BOXKLgHW4tom1N1P7trB7-</argument>
+>>>>>>> c0bf06fa9922662091069544d4b1398911d46d37
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -2183,12 +2194,20 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
+<<<<<<< HEAD
       <argument>5a6b64d800e5f8.14100636</argument>
+=======
+      <argument>5a661cf4b02961.65451349</argument>
+>>>>>>> c0bf06fa9922662091069544d4b1398911d46d37
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
+<<<<<<< HEAD
       <argument>5a6b64d800e5f8.14100636</argument>
+=======
+      <argument>5a661cf4b02961.65451349</argument>
+>>>>>>> c0bf06fa9922662091069544d4b1398911d46d37
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -3268,7 +3287,15 @@
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
+<<<<<<< HEAD
     <service id="service_locator.f753f668ae0659e608dace300cce5a3a" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+=======
+    <service id="service_locator.3071e1243c0be597217860191ed5e858" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
+    <service id="service_locator.e799903756f2eb56b90c213316d1ef0e" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+>>>>>>> c0bf06fa9922662091069544d4b1398911d46d37
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
@@ -3473,7 +3500,11 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>27a22wZfcG</argument>
       <argument>0</argument>
+<<<<<<< HEAD
       <argument>GpMAcZ9ggR2vG9EPw9XHW9</argument>
+=======
+      <argument>BOXKLgHW4tom1N1P7trB7-</argument>
+>>>>>>> c0bf06fa9922662091069544d4b1398911d46d37
       <argument>D:\xampp\htdocs\practica1symfony_RCarreno_SCifuentes\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3481,7 +3512,11 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>ePZvEe-qCu</argument>
       <argument>0</argument>
+<<<<<<< HEAD
       <argument>GpMAcZ9ggR2vG9EPw9XHW9</argument>
+=======
+      <argument>BOXKLgHW4tom1N1P7trB7-</argument>
+>>>>>>> c0bf06fa9922662091069544d4b1398911d46d37
       <argument>D:\xampp\htdocs\practica1symfony_RCarreno_SCifuentes\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3489,7 +3524,11 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>mDb-CoAVn4</argument>
       <argument>0</argument>
+<<<<<<< HEAD
       <argument>GpMAcZ9ggR2vG9EPw9XHW9</argument>
+=======
+      <argument>BOXKLgHW4tom1N1P7trB7-</argument>
+>>>>>>> c0bf06fa9922662091069544d4b1398911d46d37
       <argument>D:\xampp\htdocs\practica1symfony_RCarreno_SCifuentes\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3497,7 +3536,11 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>fKcSPIAySN</argument>
       <argument>0</argument>
+<<<<<<< HEAD
       <argument>GpMAcZ9ggR2vG9EPw9XHW9</argument>
+=======
+      <argument>BOXKLgHW4tom1N1P7trB7-</argument>
+>>>>>>> c0bf06fa9922662091069544d4b1398911d46d37
       <argument>D:\xampp\htdocs\practica1symfony_RCarreno_SCifuentes\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
