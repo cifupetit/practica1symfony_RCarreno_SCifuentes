@@ -143,9 +143,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // app_partit_addpartit
+        // addPartit
         if ('/addPartit' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\PartitController::addPartitAction',  '_route' => 'app_partit_addpartit',);
+            return array (  '_controller' => 'AppBundle\\Controller\\PartitController::addPartitAction',  '_route' => 'addPartit',);
         }
 
         // app_partit_updatepartit
