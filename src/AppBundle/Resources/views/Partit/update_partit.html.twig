@@ -3,5 +3,11 @@
 {% block title %}AppBundle:Partit:updatePartit{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Partit:updatePartit page</h1>
+<div style="text-align:center;">
+<h1>Modificar Partit</h1>
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+<button style="margin: 1%;"  class="btn btn-info""><a style="text-decoration:none;color:white; margin: 100px;" href="{{ path('competiciones')}}">Competiciones</a></button>
+</div>
 {% endblock %}

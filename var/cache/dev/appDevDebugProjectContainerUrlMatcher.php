@@ -143,19 +143,19 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // app_partit_addpartit
+        // addPartit
         if ('/addPartit' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\PartitController::addPartitAction',  '_route' => 'app_partit_addpartit',);
+            return array (  '_controller' => 'AppBundle\\Controller\\PartitController::addPartitAction',  '_route' => 'addPartit',);
         }
 
-        // app_partit_updatepartit
+        // updatePartit
         if ('/updatePartit' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\PartitController::updatePartitAction',  '_route' => 'app_partit_updatepartit',);
+            return array (  '_controller' => 'AppBundle\\Controller\\PartitController::updatePartitAction',  '_route' => 'updatePartit',);
         }
 
-        // app_partit_deletepartit
+        // deletePartit
         if ('/deletePartit' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\PartitController::deletePartitAction',  '_route' => 'app_partit_deletepartit',);
+            return array (  '_controller' => 'AppBundle\\Controller\\PartitController::deletePartitAction',  '_route' => 'deletePartit',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

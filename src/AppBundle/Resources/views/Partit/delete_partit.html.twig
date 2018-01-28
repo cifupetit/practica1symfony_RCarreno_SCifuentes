@@ -3,5 +3,11 @@
 {% block title %}AppBundle:Partit:deletePartit{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Partit:deletePartit page</h1>
+<div style="text-align:center;">
+<h1>Eliminar partit</h1>
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+<button style="margin: 1%;" class="btn btn-info""><a style="text-decoration:none;color:white; margin: 100px;" href="{{ path('competiciones')}}">Competiciones</a></button>
+</div>
 {% endblock %}
