@@ -3,6 +3,7 @@
 {% block title %}AppBundle:Partit:addPartit{% endblock %}
 
 {% block body %}
+<<<<<<< HEAD
 <div style="text-align:center;">
 <h1>Afegir Partit</h1>
 {{ form_start(form) }}
@@ -10,4 +11,11 @@
 {{ form_end(form) }}
 <button style="margin: 1%;"  class="btn btn-info""><a style="text-decoration:none;color:white; margin: 100px;" href="{{ path('competiciones')}}">Competiciones</a></button>
 </div>
+=======
+<h1>Afegeix partit</h1>
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+>>>>>>> e251197a95b330efeb669e4ab1e7bb031f95e1cb
 {% endblock %}

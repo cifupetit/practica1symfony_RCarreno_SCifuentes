@@ -695,6 +695,7 @@ eabfbb,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev
 78391a,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listPartidosDeEquipoForm,1516625290,,500
 6d141b,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listPartidosDeEquipoForm,1516625294,,302
 2ac82d,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listPartidosDeEquipo/1,1516625295,,200
+<<<<<<< HEAD
 e49eeb,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listCompeticiones,1516987621,,200
 7f78ae,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listTemporadas/Liga,1516987626,,200
 dbd3a4,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listCompeticiones,1516987629,,200
@@ -781,6 +782,10 @@ dfcf8f,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev
 d87d36,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listPartidosDeEquipoForm,1517043036,,302
 b9d875,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listPartidosDeEquipo/1,1517043036,,200
 cb9d2b,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listCompeticiones,1517043058,,200
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> e251197a95b330efeb669e4ab1e7bb031f95e1cb
 c9412c,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listTemporadas/Liga,1517045006,,200
 1eb72b,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listCompeticiones,1517045011,,200
 7c6944,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listTemporadas/Liga,1517045014,,200
@@ -791,6 +796,7 @@ d65026,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia
 a4f486,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listCompeticiones,1517045034,,200
 bdb27f,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listTemporadas/Liga,1517045035,,200
 4b8646,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listPartidos/Liga/1,1517045039,,200
+<<<<<<< HEAD
 694762,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listPartidos/Liga/1,1517046532,,200
 f6d201,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listTemporadas/Liga,1517046537,,200
 047273,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listCompeticiones,1517046541,,200
@@ -866,3 +872,44 @@ e09cf3,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia
 12486f,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listCompeticiones,1517164509,,200
 a4091c,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/deletePartit,1517164510,,200
 0fe1ec,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes%20-%20copia/web/app_dev.php/listCompeticiones,1517164511,,200
+=======
+=======
+=======
+d2b11c,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listTemporadas,1516639525,7c458c,200
+7c458c,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listTemporadas,1516639525,,404
+293885,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listPartidos/LLiga/101,1516639548,,200
+027c0b,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listPartidos/LLiga/101,1516640250,,200
+6d5de8,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516640798,,200
+651b74,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516641264,,200
+a16eb1,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516641267,,200
+654112,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listPartidos/LLiga/101,1516641272,,200
+c69806,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516641329,,200
+06922f,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516641394,,200
+c135c4,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516641531,ed00f9,200
+ed00f9,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516641531,,500
+159948,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516641542,,200
+f9066f,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516641545,365809,200
+365809,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516641545,,500
+1779f3,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listPartidos/LLiga/101,1516641674,,200
+9d4517,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/listCompeticiones,1516641680,,200
+9a4de5,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516641689,,200
+a6a58d,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516641855,,200
+517345,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516641881,521c19,200
+521c19,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516641881,,500
+7b1999,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516642009,e1465c,200
+e1465c,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516642009,,500
+e8f83b,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516642011,,200
+605784,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516642031,3c212e,200
+3c212e,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516642031,,500
+53bd72,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516642697,d53b69,200
+d53b69,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516642697,,500
+b76d32,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516642720,3dbfa6,200
+3dbfa6,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516642720,,500
+5bc8db,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516642762,62d979,200
+62d979,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516642762,,500
+3cdbff,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516643906,,200
+9d4235,::1,GET,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516643939,d84518,200
+d84518,::1,POST,http://localhost/practica1symfony_RCarreno_SCifuentes/web/app_dev.php/addPartit,1516643939,,500
+>>>>>>> c0bf06fa9922662091069544d4b1398911d46d37
+>>>>>>> 867a4946b2a0dc578d572dbbc04455ef0e821e09
+>>>>>>> e251197a95b330efeb669e4ab1e7bb031f95e1cb

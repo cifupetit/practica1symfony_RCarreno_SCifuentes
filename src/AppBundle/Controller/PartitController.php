@@ -193,8 +193,8 @@ class PartitController extends Controller
         $partits = $query->getResult();
 
         return $this->render('AppBundle:Partit:listPartidos.html.twig', array(
-		'partits'=>$partits,'comp'=>$competicio,'temp'=>$temporada
-		));
+        'partits'=>$partits,'comp'=>$competicio,'temp'=>$temporada
+        ));
     }
 
 }
